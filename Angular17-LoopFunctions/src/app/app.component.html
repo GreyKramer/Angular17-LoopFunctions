@@ -1,1 +1,35 @@
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <div class="courses">
+    @for(course of courses; track course.id; let index = $index; let count =
+    $count; let odd = $odd){
+    <!-- <h1>{{count}}</h1> -->
+    <app-course-card class="course" [class.is-odd]="odd" [course]="course" [index]="index"></app-course-card>
+    } @empty {
+      <!-- if no courses are found -->
+    <h1>No Elements found</h1>
+    }
+      <!-- more on tracking funtion  -->
+      <!-- tracking helps @for to optimize the way the DOM is rendered  -->
+      <!-- if the previous list is changed, Angular @for will compare the previous list to the current list and update accordingly  -->
+      <!-- angular can only update the DOM if it can uniquley identify the element, which is why we need a tracking function -->
+
+
+
+
+    <!-- same loop only using a custom tracking funciton to create a unique id -->
+
+    <!-- @for(course of courses; track trackCourse; let index = $index; let count =
+      $count;){
+        <app-course-card [course]="course" [index]="index"></app-course-card>
+      } -->
+
+
+
+
+      <!-- if there is no unique ids to iterate by, as a last resort use $index -->
+
+      <!-- @for(course of courses; track $index; let count = $count){
+        <app-course-card [course]="course" [index]="$index"></app-course-card>
+      } -->
+  </div>
+</div>

@@ -1,1 +1,17 @@
-<p>course-card works!</p>
+<div class="course-card">
+  <div class="course-title">
+    {{ course.description }} index: {{index}}
+  </div>
+  <br>
+  <div class="course-description">
+    {{ course.longDescription }}
+  </div>
+  <br>
+  <div class="content">
+    {{ course.category }}
+    <div class="lesson-count">
+      Lessons: {{ course.lessonCount }}
+
+    </div>
+  </div>
+</div>
